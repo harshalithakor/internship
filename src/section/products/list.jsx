@@ -2,10 +2,11 @@ import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDebounce } from "use-debounce";
-import { ProductContext } from "../Context/context";
+import { ProductContext } from "../../Context/context";
 
 export default function ProductList() {
-  const { data, query, setQuery, editData, deleteProduct } = useContext(ProductContext);
+  const { data, query, setQuery, editData, deleteProduct } =
+    useContext(ProductContext);
   const navigate = useNavigate();
   // const [query, setQuery] = useState("");
   const [minPrice, setMinPrice] = useState("");
@@ -53,7 +54,7 @@ export default function ProductList() {
   // }, [savedData]);
 
   return (
-    <div className="min-h-screen bg-blue-100 flex flex-col items-center py-5">
+    <div className="min-h-screen flex flex-col items-center py-5">
       {/* <div className="w-full flex justify-end p-1">
         <button
           className="bg-cyan-200 p-2 rounded-md cursor-pointer"
@@ -76,34 +77,44 @@ export default function ProductList() {
         />
       </div> */}
 
-      <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-3 mt-5">
+      <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-3 mt-5" style={{
+        backgroundImage: "url('/assets/product.png')",
+      }}>
         <div>
-          <h4 className="text-lg font-semibold text-black mb-2 text-center">
+          <h4
+            className="text-lg font-semibold text-white mb-2 text-center"
+            style={{
+              backgroundImage: "url('/assets/product.png')",
+            }}
+          >
             Shop by price
           </h4>
         </div>
-        <div>
-          <div className="bg-white-400 border-amber-950 px-4 py-1 rounded text-black">
-            <input
-              type="Number"
-              placeholder="min"
-              value={minPrice}
-              onChange={(e) => setMinPrice(e.target.value)}
-            />
+       <div>
+  <div className="flex justify-center py-2 rounded">
+    <input
+      type="number"
+      placeholder="min"
+      value={minPrice}
+      onChange={(e) => setMinPrice(e.target.value)}
+      className="mr-3 px-2 py-1 border border-[#8B5E3C] rounded focus:outline-none text-white"
+    />
 
-            <input
-              type="Number"
-              placeholder="max"
-              value={maxPrice}
-              onChange={(e) => setMaxPrice(e.target.value)}
-            />
-          </div>
-        </div>
+    <input
+      type="number"
+      placeholder="max"
+      value={maxPrice}
+      onChange={(e) => setMaxPrice(e.target.value)}
+      className="px-2 py-1 border border-[#8B5E3C] rounded focus:outline-none text-white"
+    />
+  </div>
+</div>
+
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 w-full max-w-6xl">
         {filteredData.map((item, i) => (
-          <div key={i} className="bg-white shadow-md rounded-xl p-5">
+          <div key={i} className="bg-[#F5EFE6] shadow-md rounded-xl p-5">
             <h2 className="font-bold">Product Name: {item.productName}</h2>
             <p>Size: {item.size}</p>
             <p>Price: {"₹" + item.price}</p>
@@ -129,7 +140,7 @@ export default function ProductList() {
               </button>
 
               <button
-                 onClick={() => deleteProduct(i)}
+                onClick={() => deleteProduct(i)}
                 className="bg-red-400 px-4 py-1 rounded text-white hover:bg-red-600"
               >
                 Delete

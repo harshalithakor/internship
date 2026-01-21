@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ProductContext } from "../../Context/context";
 import imageConverter from "./imageConverter";
-import { ProductContext } from "../Context/context";
 
 export default function ProductCreateForm() {
   // const {
@@ -126,12 +126,14 @@ export default function ProductCreateForm() {
   // };
 
   return (
-    <div className="min-h-screen bg-blue-100 flex flex-col items-center p-6">
+    <div className="min-h-screen  flex flex-col items-center p-6">
       <form
         onSubmit={multiSubmit}
-        className="bg-white shadow-lg rounded-xl p-6 w-full max-w-md"
+        className=" shadow-lg rounded-xl p-6 w-full max-w-md" style={{
+        backgroundImage: "url('/assets/product.png')"
+      }}
       >
-        <h1 className="text-black font-extrabold text-center mb-4">
+        <h1 className="text-white font-extrabold text-center mb-4">
           Product Page Design
         </h1>
 
@@ -142,7 +144,7 @@ export default function ProductCreateForm() {
           onChange={(e) =>
             setValues({ ...values, productName: e.target.value })
           }
-          className="w-full mb-4 p-2 border rounded"
+          className="w-full mb-4 p-2 border rounded text-white"
         />
 
         <input
@@ -150,7 +152,7 @@ export default function ProductCreateForm() {
           placeholder="Size"
           value={values.size}
           onChange={(e) => setValues({ ...values, size: e.target.value })}
-          className="w-full mb-4 p-2 border rounded"
+          className="w-full mb-4 p-2 border rounded text-white"
         />
 
         <input
@@ -158,7 +160,7 @@ export default function ProductCreateForm() {
           placeholder="Product Price"
           value={values.price}
           onChange={(e) => setValues({ ...values, price: e.target.value })}
-          className="w-full mb-4 p-2 border rounded"
+          className="w-full mb-4 p-2 border rounded text-white"
         />
 
         <input
@@ -167,7 +169,7 @@ export default function ProductCreateForm() {
           onChange={(e) =>
             setValues({ ...values, deliveryDate: e.target.value })
           }
-          className="w-full mb-4 p-2 border rounded"
+          className="w-full mb-4 p-2 border rounded text-white"
         />
 
         <input
@@ -181,7 +183,7 @@ export default function ProductCreateForm() {
               setValues({ ...values, image: base64 });
             }
           }}
-          className="mb-3"
+          className="mb-3 text-white"
         />
 
         {values.image && (

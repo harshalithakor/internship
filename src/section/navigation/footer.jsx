@@ -1,12 +1,10 @@
-import React, { useState, useContext } from "react";
-import { ProductContext } from "../Context/context";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 px-4 md:px-16 lg:px-28 py-8">
+    <footer className="bg-[#3B2A1A] px-4 md:px-16 lg:px-28 py-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           <h2 className="text-white font-bold mb-4"> About US</h2>
@@ -20,22 +18,22 @@ const Footer = () => {
           <h2 className="text-white font-bold mb-4"> Quick Links</h2>
           <ul>
             <li>
-              <a href="" className="hover:bg-purple-300 text-gray-300">
+              <a href="" className="hover:underline text-gray-300">
                 Home
               </a>
             </li>
             <li>
-              <a href="" className="hover:bg-purple-300 text-gray-300">
+              <a href="" className="hover:underline text-gray-300">
                 About
               </a>
             </li>
             <li>
-              <a href="" className="hover:bg-purple-300 text-gray-300">
+              <a href="" className="hover:underline text-gray-300">
                 Services
               </a>
             </li>
             <li>
-              <a href="" className="hover:bg-purple-300 text-gray-300">
+              <a href="" className="hover:underline text-gray-300">
                 Contact
               </a>
             </li>
@@ -47,26 +45,26 @@ const Footer = () => {
             <li>
               {" "}
               <FaFacebook className="text-blue-500" />
-              <a href="" className="hover:bg-purple-300 text-gray-300">
+              <a href="" className="hover:underline text-gray-300">
                 Facebook
               </a>
             </li>
             <li>
               <FaInstagram className="text-orange-500" />
-              <a href="" className="hover:bg-purple-300 text-gray-300">
+              <a href="" className="hover:underline text-gray-300">
                 Instagram
               </a>
             </li>
             <li>
               <FaTwitter className="text-sky-500" />
-              <a href="" className="hover:bg-purple-300 text-gray-300">
+              <a href="" className="hover:underline text-gray-300">
                 Twitter
               </a>
             </li>
           </ul>
         </div>
       </div>
-      <div className=" border-t border-gray-600 pt-6 text-gray-300 text-center mt-6">
+      <div className="hover:underline border-t border-gray-600 pt-6 text-gray-300 text-center mt-6">
         <p>© 2026 Code With Yousaf. All Rights Reserved.</p>
       </div>
     </footer>
